@@ -1,0 +1,275 @@
+/* ==========================================================================
+   PFP Greenifier Canvas Tool Styles
+   ========================================================================== */
+.gen {
+  position: relative;
+  overflow: hidden;
+}
+
+.gen__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.gen__badge {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--green-neon);
+  background: rgba(0, 200, 5, 0.15);
+  border: 1px solid var(--panel-border);
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gen__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+@media (max-width: 900px) {
+  .gen__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel {
+  background: rgba(9, 28, 17, 0.75);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.panel__title {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-main);
+}
+
+.panel__title span {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--green-main);
+  color: #031208;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+/* File Dropzone */
+.drop {
+  border: 2px dashed var(--panel-border);
+  border-radius: var(--radius-md);
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  transition: var(--transition-fast);
+  background: rgba(4, 13, 8, 0.5);
+  cursor: pointer;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drop:hover, .drop.is-dragover {
+  border-color: var(--green-neon);
+  background: rgba(0, 200, 5, 0.08);
+}
+
+.drop input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.drop__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(0, 200, 5, 0.15);
+  color: var(--green-neon);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  font-size: 1.8rem;
+}
+
+.drop__title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.drop__sub {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  line-height: 1.5;
+}
+
+.drop .preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: calc(var(--radius-md) - 2px);
+}
+
+.drop__clear {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid var(--panel-border);
+  color: var(--text-main);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* Compare Before/After Canvas Stage */
+.stage {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: rgba(4, 13, 8, 0.8);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stage__empty {
+  text-align: center;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.compare {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.compare.is-active {
+  display: block;
+}
+
+.compare__before, .compare__after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.compare__after {
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+}
+
+.compare__handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background: var(--green-neon);
+  transform: translateX(-50%);
+  cursor: ew-resize;
+  z-index: 20;
+  box-shadow: 0 0 10px var(--green-neon);
+}
+
+.compare__handle i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--green-neon);
+  color: #031208;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px var(--green-neon);
+}
+
+.compare__tag {
+  position: absolute;
+  top: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid var(--panel-border);
+  color: var(--text-main);
+  z-index: 15;
+}
+
+.compare__tag--a { left: 14px; }
+.compare__tag--b { right: 14px; color: var(--green-neon); border-color: var(--green-neon); }
+
+.gen__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.result-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.result-actions .btn {
+  flex: 1;
+}
+
+.gen__note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-top: 10px;
+}

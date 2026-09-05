@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>$SAVE COIN — Coming Soon</title>
+  <meta name="description" content="$SAVE COIN is coming soon on Robinhood Chain.">
+  <meta name="theme-color" content="#00C805">
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+  <link rel="apple-touch-icon" href="assets/img/logo.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/landing.css">
+</head>
+<body>
+
+  <!-- Fullscreen MP4 Video Loop (Green character walking in forest) -->
+  <div class="video-stage">
+    <video id="forestVideo" autoplay loop muted playsinline>
+      <source src="assets/video/bg.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Dark Gradient & Grain Overlays -->
+  <div class="video-veil"></div>
+  <div class="grain"></div>
+
+  <!-- Top-Right Icon-Only Audio Toggle Button -->
+  <button class="audio-toggle-btn" id="soundBtn" type="button" title="Unmute Audio">
+    🔈
+  </button>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Headline in MIDDLE of Page -->
+  <main class="teaser-container">
+    <div class="main-card">
+      <h1 class="h-title">
+        <span>$SAVE</span> IS COMING SOON.
+      </h1>
+    </div>
+  </main>
+
+  <!-- One-Line Bottom Footer Bar with Professional X Link -->
+  <footer class="footer-bar">
+    <a class="social-btn--x" href="https://x.com/save_robinhood" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="16" height="16">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+      <span>@save_robinhood</span>
+    </a>
+    <button class="ca-btn" type="button" data-copy="0x71SAVE...ROBINHOOD_SOON">
+      📋 CA: SOON... (CLICK TO COPY)
+    </button>
+  </footer>
+
+  <!-- Script -->
+  <script src="assets/js/door.js" defer></script>
+</body>
+</html>

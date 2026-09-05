@@ -1,0 +1,110 @@
+/* ==========================================================================
+   Interactive Arcade Mini-Games Styling
+   ========================================================================== */
+.arcade__tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  background: rgba(9, 28, 17, 0.7);
+  border: 1px solid var(--panel-border);
+  color: var(--text-muted);
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition-fast);
+}
+
+.tab:hover {
+  color: var(--text-main);
+  border-color: var(--green-main);
+}
+
+.tab.is-active {
+  background: var(--green-main);
+  color: #031208;
+  border-color: var(--green-neon);
+  font-weight: 700;
+  box-shadow: 0 0 20px rgba(0, 200, 5, 0.4);
+}
+
+.arcade__stage {
+  background: rgba(9, 28, 17, 0.85);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  backdrop-filter: blur(14px);
+}
+
+.arcade__hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--panel-border);
+  margin-bottom: 20px;
+}
+
+.arcade__hud b {
+  color: var(--green-neon);
+  font-size: 1.1rem;
+}
+
+.arcade__canvas-wrap {
+  width: 100%;
+  height: 440px;
+  background: #020a05;
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0, 200, 5, 0.2);
+}
+
+#gameCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.arcade__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(4, 13, 8, 0.88);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+  padding: 30px;
+  z-index: 10;
+}
+
+.arcade__overlay h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--green-neon);
+}
+
+.arcade__hint {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 14px;
+}

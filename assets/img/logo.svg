@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#092215"/>
+      <stop offset="50%" stop-color="#050F0A"/>
+      <stop offset="100%" stop-color="#020805"/>
+    </linearGradient>
+    
+    <linearGradient id="greenGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00FF66"/>
+      <stop offset="50%" stop-color="#00C805"/>
+      <stop offset="100%" stop-color="#00873E"/>
+    </linearGradient>
+
+    <linearGradient id="featherGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#DCFFE8"/>
+    </linearGradient>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Outer Ring Base -->
+  <circle cx="250" cy="250" r="235" fill="none" stroke="#00C805" stroke-width="3" opacity="0.3"/>
+  <circle cx="250" cy="250" r="215" fill="none" stroke="url(#greenGlow)" stroke-width="14"/>
+
+  <!-- Circuit Orbit Segments & Nodes -->
+  <g stroke="url(#greenGlow)" stroke-width="8" fill="none" stroke-linecap="round">
+    <!-- Top Arc -->
+    <path d="M 140 70 A 215 215 0 0 1 360 70"/>
+    <line x1="250" y1="35" x2="250" y2="48"/>
+    <circle cx="250" cy="70" r="12" fill="#00FF66" stroke="#005224" stroke-width="3"/>
+    
+    <!-- Left Node & Traces -->
+    <circle cx="85" cy="250" r="14" fill="#00FF66" stroke="#005224" stroke-width="4"/>
+    <path d="M 85 250 L 125 250"/>
+    
+    <!-- Right Node & Traces -->
+    <circle cx="415" cy="250" r="14" fill="#00FF66" stroke="#005224" stroke-width="4"/>
+    <path d="M 375 250 L 415 250"/>
+
+    <!-- Bottom Node & Traces -->
+    <circle cx="250" cy="415" r="14" fill="#00FF66" stroke="#005224" stroke-width="4"/>
+    <path d="M 250 375 L 250 415"/>
+    
+    <!-- Inner Circuit Lines -->
+    <path d="M 340 330 L 375 365" stroke-width="6"/>
+    <circle cx="375" cy="365" r="8" fill="#00FF66"/>
+
+    <path d="M 160 170 L 125 135" stroke-width="6"/>
+    <circle cx="125" cy="135" r="8" fill="#00FF66"/>
+  </g>
+
+  <!-- Child Joy Silhouette -->
+  <g fill="url(#greenGlow)">
+    <!-- Head -->
+    <circle cx="250" cy="170" r="44"/>
+    
+    <!-- Body & Raised Arms -->
+    <path d="M 250 215 
+             C 210 215, 145 170, 115 130 
+             C 105 118, 123 104, 135 116 
+             C 158 145, 195 190, 215 210
+             L 215 365
+             C 215 378, 285 378, 285 365
+             L 285 210
+             C 305 190, 342 145, 365 116
+             C 377 104, 395 118, 385 130
+             C 355 170, 290 215, 250 215 Z"/>
+
+    <!-- Robinhood Feather Badge on Chest -->
+    <path d="M 248 245 
+             C 270 255, 282 278, 276 320 
+             C 258 302, 238 298, 228 282
+             C 222 272, 233 250, 248 245 Z
+             M 244 256 L 266 310" 
+          fill="url(#featherGrad)" stroke="#005224" stroke-width="3"/>
+  </g>
+</svg>
